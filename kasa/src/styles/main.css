@@ -1,0 +1,145 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  src: url("../scss/assets/Montserrat-VariableFont_wght.ttf"); }
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; }
+
+header {
+  height: 64px;
+  padding: 48px 96px;
+  display: flex;
+  justify-content: space-between; }
+  header > .logo {
+    height: 64px; }
+    @media screen and (max-width: 768px) {
+      header > .logo {
+        height: 48px; } }
+  header > nav {
+    display: flex;
+    align-items: center;
+    gap: 56px; }
+    header > nav > a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 1.5rem; }
+      @media screen and (max-width: 768px) {
+        header > nav > a {
+          text-transform: uppercase;
+          font-size: 0.75rem; } }
+    @media screen and (max-width: 768px) {
+      header > nav {
+        gap: 24px; } }
+  @media screen and (max-width: 768px) {
+    header {
+      height: 48px;
+      padding: 16px 20px; } }
+
+main {
+  margin: 8px 96px;
+  min-height: calc( 100vh - calc( 48px * 2 + 64px ) - 200px - 8px * 2); }
+  @media screen and (max-width: 768px) {
+    main {
+      margin: 8px 16px;
+      min-height: calc( 100vh - calc( 16px * 2 + 48px ) - 200px - 8px * 2); } }
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-top: 64px;
+  padding-bottom: 24px;
+  height: calc( 200px - 64px - 24px );
+  font-size: 1.5rem; }
+  @media screen and (max-width: 768px) {
+    footer {
+      font-size: 0.75rem;
+      gap: 16px;
+      padding-top: 64px;
+      padding-bottom: 64px;
+      height: calc( 200px - 64px - 64px ); }
+      footer > p {
+        width: 122px;
+        text-align: center; } }
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
+  .not-found > h1 {
+    font-weight: 700;
+    font-size: 18rem;
+    color: #FF6060; }
+    @media screen and (max-width: 768px) {
+      .not-found > h1 {
+        font-size: 6rem; } }
+  .not-found > p {
+    font-size: 2.25rem;
+    color: #FF6060;
+    font-weight: 500;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .not-found > p {
+        font-size: 1.125rem; } }
+  .not-found > a {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #000000;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .not-found > a {
+        font-size: 0.875rem; } }
+
+/*# sourceMappingURL=main.css.map */
