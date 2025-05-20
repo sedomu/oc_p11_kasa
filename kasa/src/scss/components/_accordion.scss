@@ -1,0 +1,59 @@
+.accordion {
+  position: relative;
+
+  & > .title{
+    background-color: $orange-400;
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 40px;
+    padding: 8px 16px;
+
+    color: $white-point;
+    font-size: 1.5rem;
+    font-weight: 700;
+    z-index: 100;
+
+    & > img {
+      width: 32px;
+      transform: rotate(180deg);
+
+      @media screen and (max-width: $mobile_breakpoint){
+        width: 16px;
+      }
+    }
+
+    @media screen and (max-width: $mobile_breakpoint){
+      font-size: 0.813rem;
+    }
+  }
+
+  & > .content{
+    background-color: $grey-background-45;
+    padding: 24px 16px 16px 16px;
+    margin-top: -8px;
+    font-size: 1.125rem;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    z-index: 0;
+
+    @media screen and (max-width: $mobile_breakpoint){
+      font-size: 0.75rem;
+    }
+  }
+
+  &.closed{
+    & > .title > img{
+      transform: rotate(0deg);
+    }
+
+    & > .content{
+      display: none;
+    }
+  }
+}
