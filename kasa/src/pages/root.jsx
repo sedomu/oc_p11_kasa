@@ -1,19 +1,21 @@
 import {NavLink, Outlet} from "react-router-dom";
+import logo_orange from "../assets/images/logo_orange.svg";
+import logo_white from "../assets/images/logo_white.svg";
 
 export function Root() {
     return <>
         <header>
-            <h1>Kasa</h1>
+            <img className="logo" src={logo_orange} alt={"logo"}/>
             <nav>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/about">About</NavLink>
+                <NavLink to="/">Accueil</NavLink>
+                <NavLink to="/about">A propos</NavLink>
             </nav>
         </header>
         <main>
             <Outlet />
         </main>
         <footer>
-            <h1>Kasa (footer)</h1>
+            <img className="logo" src={logo_white} alt={"logo"}/>
             <p>© 2020 Kasa. All rights reserved</p>
         </footer>
     </>
