@@ -11,9 +11,9 @@ export function Root() {
                 <NavLink to="/about">A propos</NavLink>
             </nav>
         </header>
-        <main>
+
             <Outlet />
-        </main>
+
         <footer>
             <img className="logo" src={logo_white} alt={"logo"}/>
             <p>© 2020 Kasa. All rights reserved</p>
