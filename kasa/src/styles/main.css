@@ -161,18 +161,19 @@ footer {
     transform: rotate(0deg);
     transition: transform 0.3s ease-out; }
 
-.about > .hero {
+.hero {
   overflow: hidden;
   height: 224px;
   border-radius: 24px;
-  position: relative; }
-  .about > .hero > img {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 4px 0; }
+  .hero > img {
     display: block;
     height: inherit;
     width: 100%;
     object-fit: cover;
     object-position: center; }
-  .about > .hero::before {
+  .hero::before {
     content: '';
     display: block;
     position: absolute;
@@ -180,9 +181,97 @@ footer {
     height: 100%;
     border-radius: 24px;
     background-color: rgba(0, 0, 0, 0.3); }
+  .hero > .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; }
+    .hero > .text > h1 {
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 3rem;
+      text-align: center;
+      padding: 16px; }
+      @media screen and (max-width: 768px) {
+        .hero > .text > h1 {
+          text-align: left;
+          font-size: 1.5rem; } }
+    @media screen and (max-width: 768px) {
+      .hero > .text {
+        justify-content: flex-start;
+        font-size: 1.5rem; } }
   @media screen and (max-width: 768px) {
-    .about > .hero {
-      height: 112px; } }
+    .hero {
+      height: 112px;
+      box-shadow: none; } }
+
+.card {
+  width: 344px;
+  height: 344px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background-color: #FF6060; }
+  .card > img {
+    width: 344px;
+    height: 344px;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center center; }
+    @media screen and (max-width: 768px) {
+      .card > img {
+        width: 100%;
+        height: 256px; } }
+  .card > .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0A0A0A00 0%, #0A0A0A00 42%, rgba(4, 4, 4, 0.41) 100%);
+    z-index: 50;
+    border-radius: 16px; }
+  .card > p {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.125rem;
+    position: absolute;
+    top: 264px;
+    left: 24px;
+    line-height: 150%;
+    z-index: 100; }
+    @media screen and (max-width: 768px) {
+      .card > p {
+        top: 184px;
+        left: 16px; } }
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 100%;
+      height: 256px; } }
+
+.index > .housing {
+  background-color: #F6F6F6;
+  border-radius: 24px;
+  padding: 56px;
+  margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+  justify-content: space-between; }
+  @media screen and (max-width: 768px) {
+    .index > .housing {
+      background-color: transparent;
+      border-radius: 0;
+      padding: 0;
+      gap: 16px;
+      flex-wrap: nowrap;
+      flex-direction: column; } }
+
 .about > .content {
   padding: 40px 104px;
   display: flex;
