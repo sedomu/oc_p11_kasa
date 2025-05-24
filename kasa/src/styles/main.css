@@ -116,9 +116,9 @@ footer {
         width: 122px;
         text-align: center; } }
 
-.accordion {
+.collapse {
   position: relative; }
-  .accordion > .title {
+  .collapse > .title {
     background-color: #FF6060;
     position: relative;
     display: flex;
@@ -132,17 +132,17 @@ footer {
     font-size: 1.5rem;
     font-weight: 700;
     z-index: 100; }
-    .accordion > .title > img {
+    .collapse > .title > img {
       width: 32px;
       transform: rotate(-180deg);
       transition: transform 0.3s ease-out; }
       @media screen and (max-width: 768px) {
-        .accordion > .title > img {
+        .collapse > .title > img {
           width: 16px; } }
     @media screen and (max-width: 768px) {
-      .accordion > .title {
+      .collapse > .title {
         font-size: 0.813rem; } }
-  .accordion > .content {
+  .collapse > .content {
     background-color: rgba(246, 246, 246, 0.45);
     padding: 0 16px 0 16px;
     margin-top: -8px;
@@ -150,14 +150,14 @@ footer {
     border-radius: 0 0 8px 8px;
     position: relative;
     z-index: 0; }
-    .accordion > .content > .wrapper {
+    .collapse > .content > .wrapper {
       padding: 24px 0 16px 0;
       margin: 0 0 0 0;
       overflow: hidden; }
     @media screen and (max-width: 768px) {
-      .accordion > .content {
+      .collapse > .content {
         font-size: 0.75rem; } }
-  .accordion.closed > .title > img {
+  .collapse.closed > .title > img {
     transform: rotate(0deg);
     transition: transform 0.3s ease-out; }
 

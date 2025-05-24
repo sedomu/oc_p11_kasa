@@ -1,7 +1,7 @@
 import accordion_arrow_closed from "../assets/images/accordion-arrow_closed.svg";
 import { useEffect, useRef, useState } from 'react'
 
-export function Accordion({title, open, children}) {
+export function Collapse({title, open, children}) {
     const [descriptionVisible, setDescriptionVisible] = useState(open)
 
     const toggleDescription = () => {
@@ -29,7 +29,7 @@ export function Accordion({title, open, children}) {
     }, [descriptionVisible])
 
     return <>
-        <article className={"accordion " + (descriptionVisible ? "open" : "closed")}>
+        <article className={"collapse " + (descriptionVisible ? "open" : "closed")}>
             <div className="title" onClick={toggleDescription}>
                 <p>{title}</p>
                 <img src={accordion_arrow_closed} alt={"icon"}/>
