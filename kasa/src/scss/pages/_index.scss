@@ -1,0 +1,24 @@
+.index {
+  & > .housing {
+    background-color: $grey-200;
+    border-radius: 24px;
+    padding: 56px;
+    margin: 40px 0;
+
+    display: grid;
+    gap: 56px;
+    grid-template-columns: repeat(auto-fit, minmax(344px, 1fr));
+    place-items: center;
+
+
+    @media screen and (max-width: $mobile_breakpoint) {
+      background-color: transparent;
+      border-radius: 0;
+      padding: 0;
+      gap: 16px;
+
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+    }
+  }
+}
