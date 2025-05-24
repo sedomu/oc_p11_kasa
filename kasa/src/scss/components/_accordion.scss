@@ -21,7 +21,8 @@
 
     & > img {
       width: 32px;
-      transform: rotate(180deg);
+      transform: rotate(-180deg);
+      transition: transform 0.3s ease-out;
 
       @media screen and (max-width: $mobile_breakpoint){
         width: 16px;
@@ -35,12 +36,18 @@
 
   & > .content{
     background-color: $grey-background-45;
-    padding: 24px 16px 16px 16px;
+    padding: 0 16px 0 16px;
     margin-top: -8px;
     font-size: 1.125rem;
     border-radius: 0 0 8px 8px;
     position: relative;
     z-index: 0;
+
+    & > .wrapper{
+      padding: 24px 0 16px 0;
+      margin: 0 0 0 0;
+      overflow: hidden;
+    }
 
     @media screen and (max-width: $mobile_breakpoint){
       font-size: 0.75rem;
@@ -50,10 +57,7 @@
   &.closed{
     & > .title > img{
       transform: rotate(0deg);
-    }
-
-    & > .content{
-      display: none;
+      transition: transform 0.3s ease-out;
     }
   }
 }
