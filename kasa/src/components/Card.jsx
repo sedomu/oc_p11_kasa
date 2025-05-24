@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 
-export function Card({cover, title}) {
+export function Card({title, cover, id}) {
   return <>
-    <Link to={"/details/azerty"}>
+    <Link to={"/details/" + id}>
       <article className={"card"}>
         <img src={cover} alt={title}/>
         <div className="overlay"/>
-        <p>Titre de la location Titre de la location</p>
+        <p>{title}</p>
       </article>
     </Link>
   </>

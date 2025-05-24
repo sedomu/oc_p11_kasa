@@ -5,19 +5,20 @@
     padding: 56px;
     margin: 40px 0;
 
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 56px;
-    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(344px, 1fr));
+    place-items: center;
+
 
     @media screen and (max-width: $mobile_breakpoint) {
       background-color: transparent;
       border-radius: 0;
       padding: 0;
       gap: 16px;
-      flex-wrap: nowrap;
-      flex-direction: column;
 
+      grid-template-columns: 1fr;
+      justify-items: stretch;
     }
   }
 }

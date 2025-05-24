@@ -1,8 +1,16 @@
-import {Link} from "react-router-dom";
 import index_hero from '../assets/images/index_hero.png'
 import { Card } from '../components/Card.jsx'
+import { useEffect, useState } from "react";
 
 export function Home() {
+    const [logements, setLogements] = useState([])
+
+    useEffect(() => {
+        fetch("/data/logements.json")
+            .then(response => response.json())
+            .then(data => setLogements(data));
+    }, []);
+
     return <>
         <main className={"index"}>
             <section className="hero">
@@ -13,25 +21,9 @@ export function Home() {
             </section>
 
             <section className="housing">
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-                <Card title={"Appartement cosy"} cover={"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"}/>
-            </section>
-
-            <h2>Contenu de la page d'accueil</h2>
-            <section>
-                <p>Chez vous, partout et ailleurs</p>
-            </section>
-            <section>
-                <article>
-                    <Link to="/details/azerty">Titre de la location "azerty"</Link>
-                </article>
+                {logements && logements.map(logement => (
+                  <Card title={logement.title} cover={logement.cover} id={logement.id}/>
+                ))}
             </section>
         </main>
     </>;
