@@ -1,14 +1,12 @@
 import { Card } from '../components/Card.jsx'
-import { useEffect, useState } from "react";
+import { useFetch } from "../hooks/useFetch.js";
 
 export function Home() {
-    const [logements, setLogements] = useState([])
+    const [loading, logements, error] = useFetch("/data/logements.json");
 
-    useEffect(() => {
-        fetch("/data/logements.json")
-            .then(response => response.json())
-            .then(data => setLogements(data));
-    }, []);
+    if (error) {
+        console.log("An error has been returned by useFetch : " + error);
+    }
 
     return <>
         <main className={"index"}>
@@ -20,8 +18,9 @@ export function Home() {
             </section>
 
             <section className="housing">
+                { loading && <p>Chargement...</p> }
                 {logements && logements.map(logement => (
-                  <Card title={logement.title} cover={logement.cover} id={logement.id}/>
+                  <Card key={logement.id} title={logement.title} cover={logement.cover} id={logement.id}/>
                 ))}
             </section>
         </main>
