@@ -15,11 +15,19 @@
           color: $orange-400;
           font-size: 2.25rem;
           line-height: 150%;
+
+          @media screen and (max-width: $mobile_breakpoint){
+            font-size: 1.125rem;
+          }
         }
 
         p {
           font-size: 1.125rem;
           line-height: 150%;
+
+          @media screen and (max-width: $mobile_breakpoint){
+            font-size: 0.875rem;
+          }
         }
 
         ul {
@@ -36,8 +44,19 @@
           line-height: 150%;
           width: 120px;
           text-align: center;
-          border-radius: 16px;
+          border-radius: 8px;
           height: 24px;
+          
+          @media screen and (max-width: $mobile_breakpoint){
+            font-size: 0.625rem;
+            width: 80px;
+            height: 16px;
+            border-radius: 4px;
+          }
+        }
+
+        @media screen and (max-width: $mobile_breakpoint){
+          gap: 8px;
         }
       }
 
@@ -60,6 +79,11 @@
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
+
+            @media screen and (max-width: $mobile_breakpoint){
+              width: 32px;
+              height: 32px;
+            }
           }
 
           &-name {
@@ -67,12 +91,42 @@
             color: $orange-400;
             white-space: pre;
             text-align: right;
+
+            @media screen and (max-width: $mobile_breakpoint){
+              font-size: 0.75rem;
+            }
           }
+        }
+
+        @media screen and (max-width: $mobile_breakpoint){
+          flex-direction: row-reverse;
         }
       }
 
       .rating {
         display: flex;
+        gap: 16px;
+
+        & > img {
+          width: 24px;
+          height: 24px;
+
+          @media screen and (max-width: $mobile_breakpoint){
+            width: 16px;
+          }
+        }
+
+        @media screen and (max-width: $mobile_breakpoint){
+          gap: 8px;
+        }
+      }
+
+      @media screen and (max-width: $mobile_breakpoint){
+        flex-direction: column;
+        
+      }
+      
+      @media screen and (max-width: $mobile_breakpoint){
         gap: 16px;
       }
     }
@@ -83,6 +137,11 @@
 
       .collapse{
         flex: 1;
+      }
+
+      @media screen and (max-width: $mobile_breakpoint){
+        flex-direction: column;
+        gap: 24px;
       }
     }
   }

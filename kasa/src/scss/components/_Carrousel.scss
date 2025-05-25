@@ -110,4 +110,8 @@
   @media screen and (max-width: $mobile_breakpoint) {
     height: 256px;
   }
+
+  @media screen and (max-width: $mobile_breakpoint) {
+    border-radius: 16px;
+  }
 }

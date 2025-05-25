@@ -91,8 +91,8 @@ main {
   min-height: calc( 100vh - calc( 48px * 2 + 64px ) - 200px - 8px * 2); }
   @media screen and (max-width: 768px) {
     main {
-      margin: 8px 16px;
-      min-height: calc( 100vh - calc( 16px * 2 + 48px ) - 200px - 8px * 2); } }
+      margin: 24px 16px;
+      min-height: calc( 100vh - calc( 16px * 2 + 48px ) - 200px - 24px * 2); } }
 
 footer {
   background-color: #000000;
@@ -189,6 +189,9 @@ footer {
   @media screen and (max-width: 768px) {
     .carrousel {
       height: 256px; } }
+  @media screen and (max-width: 768px) {
+    .carrousel {
+      border-radius: 16px; } }
 
 .collapse {
   position: relative; }
@@ -215,7 +218,8 @@ footer {
           width: 16px; } }
     @media screen and (max-width: 768px) {
       .collapse > .title {
-        font-size: 0.813rem; } }
+        font-size: 0.813rem;
+        height: 32px; } }
   .collapse > .content {
     background-color: rgba(246, 246, 246, 0.45);
     padding: 0 16px 0 16px;
@@ -359,9 +363,15 @@ footer {
       color: #FF6060;
       font-size: 2.25rem;
       line-height: 150%; }
+      @media screen and (max-width: 768px) {
+        .details .content .general-information .title h1 {
+          font-size: 1.125rem; } }
     .details .content .general-information .title p {
       font-size: 1.125rem;
       line-height: 150%; }
+      @media screen and (max-width: 768px) {
+        .details .content .general-information .title p {
+          font-size: 0.875rem; } }
     .details .content .general-information .title ul {
       display: flex;
       justify-content: flex-start;
@@ -374,8 +384,17 @@ footer {
       line-height: 150%;
       width: 120px;
       text-align: center;
-      border-radius: 16px;
+      border-radius: 8px;
       height: 24px; }
+      @media screen and (max-width: 768px) {
+        .details .content .general-information .title li {
+          font-size: 0.625rem;
+          width: 80px;
+          height: 16px;
+          border-radius: 4px; } }
+    @media screen and (max-width: 768px) {
+      .details .content .general-information .title {
+        gap: 8px; } }
   .details .content .general-information .host {
     display: flex;
     flex-direction: column;
@@ -393,19 +412,48 @@ footer {
         border-radius: 50%;
         object-fit: cover;
         object-position: center; }
+        @media screen and (max-width: 768px) {
+          .details .content .general-information .host-profile-picture {
+            width: 32px;
+            height: 32px; } }
       .details .content .general-information .host-profile-name {
         font-size: 1.125rem;
         color: #FF6060;
         white-space: pre;
         text-align: right; }
+        @media screen and (max-width: 768px) {
+          .details .content .general-information .host-profile-name {
+            font-size: 0.75rem; } }
+    @media screen and (max-width: 768px) {
+      .details .content .general-information .host {
+        flex-direction: row-reverse; } }
   .details .content .general-information .rating {
     display: flex;
     gap: 16px; }
+    .details .content .general-information .rating > img {
+      width: 24px;
+      height: 24px; }
+      @media screen and (max-width: 768px) {
+        .details .content .general-information .rating > img {
+          width: 16px; } }
+    @media screen and (max-width: 768px) {
+      .details .content .general-information .rating {
+        gap: 8px; } }
+  @media screen and (max-width: 768px) {
+    .details .content .general-information {
+      flex-direction: column; } }
+  @media screen and (max-width: 768px) {
+    .details .content .general-information {
+      gap: 16px; } }
 .details .content .detailed-information {
   display: flex;
   gap: 72px; }
   .details .content .detailed-information .collapse {
     flex: 1; }
+  @media screen and (max-width: 768px) {
+    .details .content .detailed-information {
+      flex-direction: column;
+      gap: 24px; } }
 
 .about > .content {
   padding: 40px 104px;
