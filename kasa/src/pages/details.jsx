@@ -3,12 +3,17 @@ import {Carrousel} from '../components/Carrousel.jsx'
 import { useFetch } from '../hooks/useFetch.js'
 import {Rating} from '../components/Rating.jsx'
 import { Collapse } from '../components/Collapse.jsx'
+import { NotFound } from './404.jsx'
 
 export function Details() {
     const {id} = useParams();
     const [loading, logement, error] = useFetch("/data/logements.json", id);
 
     if (error) { console.log("An error has been returned by useFetch : " + error) }
+
+    if (logement === undefined) {
+        return <NotFound/>
+    }
 
     return <>
         <main className={"details"}>
