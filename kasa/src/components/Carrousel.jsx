@@ -4,11 +4,7 @@ export function Carrousel({ pictures }) {
 
   // Just for dev
   pictures = [
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
+    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"
   ]
 
   const [currentPicture, setCurrentPicture] = useState(0)
@@ -33,8 +29,19 @@ export function Carrousel({ pictures }) {
   return <>
     <section className={"carrousel"}>
       <img className={"cover-image"} src={pictures[currentPicture]} alt={"picture"}/>
-      <img className={"previous"} onClick={handlePreviousPicture} src={"/images/arrowCarrousel_left.svg"} alt={"previous"}/>
-      <img className={"next"} onClick={handleNextPicture} src={"/images/arrowCarrousel_left.svg"} alt={"next"}/>
+      {countPictures > 1 && <>
+        <div className={"arrow-hitbox previous"} onClick={handlePreviousPicture}>
+          <img className={"arrow-previous"} src={"/images/arrowCarrousel_left.svg"} alt={"previous"}/>
+        </div>
+        <div className={"arrow-hitbox next"} onClick={handleNextPicture}>
+          <img className={"arrow-next"} onClick={handleNextPicture} src={"/images/arrowCarrousel_left.svg"} alt={"next"}/>
+        </div>
+        <div className={"counter"}>
+          <p>{currentPicture + 1}/{countPictures}</p>
+        </div>
+      </>
+      }
+
     </section>
   </>
 }

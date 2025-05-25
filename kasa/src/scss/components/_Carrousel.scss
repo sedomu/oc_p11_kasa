@@ -1,29 +1,68 @@
 .carrousel {
   height: 416px;
-  background-color: magenta;
   position: relative;
   border-radius: 24px;
   overflow: hidden;
 
   & > .cover-image {
     width: 100%;
-    height: 416px;
+    height: 100%;
     object-fit: cover;
     object-position: center;
   }
 
-  & > .previous {
-    height: 80px;
+  & > .arrow-hitbox{
+    height: 100%;
+    width: 96px;
     position: absolute;
-    left: 24px;
-    top: calc( 50% - 40px );
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+      height: 80px;
+
+      @media screen and (max-width: $mobile_breakpoint) {
+        height: 24px;
+      }
+    }
+
+    &.previous{
+      left: 0;
+    }
+
+    &.next{
+      right: 0;
+      transform: rotate(180deg);
+    }
+
+    @media screen and (max-width: $mobile_breakpoint) {
+      width: 80px;
+    }
   }
 
-  & > .next {
-    height: 80px;
+  & > .counter{
     position: absolute;
-    right: 24px;
-    top: calc( 50% - 40px );
-    transform: rotate(180deg);
+    bottom: 0;
+    width:100%;
+    height: 72px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > p {
+      color: $white-point;
+      font-size: 1.125rem;
+    }
+
+    @media screen and (max-width: $mobile_breakpoint) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $mobile_breakpoint) {
+    height: 256px;
   }
 }
