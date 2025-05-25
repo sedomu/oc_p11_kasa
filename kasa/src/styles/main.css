@@ -221,6 +221,7 @@ footer {
     padding: 0 16px 0 16px;
     margin-top: -8px;
     font-size: 1.125rem;
+    line-height: 150%;
     border-radius: 0 0 8px 8px;
     position: relative;
     z-index: 0; }
@@ -346,8 +347,65 @@ footer {
       grid-template-columns: 1fr;
       justify-items: stretch; } }
 
-.details {
-  background-color: yellow; }
+.details .content .general-information {
+  padding: 24px 0 24px 0;
+  display: flex;
+  justify-content: space-between; }
+  .details .content .general-information .title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; }
+    .details .content .general-information .title h1 {
+      color: #FF6060;
+      font-size: 2.25rem;
+      line-height: 150%; }
+    .details .content .general-information .title p {
+      font-size: 1.125rem;
+      line-height: 150%; }
+    .details .content .general-information .title ul {
+      display: flex;
+      justify-content: flex-start;
+      gap: 8px; }
+    .details .content .general-information .title li {
+      background-color: #FF6060;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      line-height: 150%;
+      width: 112px;
+      text-align: center;
+      border-radius: 16px;
+      height: 24px; }
+  .details .content .general-information .host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; }
+    .details .content .general-information .host-profile {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px; }
+      .details .content .general-information .host-profile-picture {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center; }
+      .details .content .general-information .host-profile-name {
+        font-size: 1.125rem;
+        color: #FF6060;
+        white-space: pre;
+        text-align: right; }
+  .details .content .general-information .rating {
+    display: flex;
+    gap: 16px; }
+.details .content .detailed-information {
+  display: flex;
+  gap: 72px; }
+  .details .content .detailed-information .collapse {
+    flex: 1; }
 
 .about > .content {
   padding: 40px 104px;

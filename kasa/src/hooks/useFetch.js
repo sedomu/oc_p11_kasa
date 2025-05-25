@@ -11,7 +11,7 @@ export function useFetch(url, id) {
       .then(data => {
         setData(data);
         if (id !== undefined){
-          setData(data.filter(logement => logement.id === id))
+          setData(data.find(logement => logement.id === id))
         }
       })
       .catch(error => setError(error))

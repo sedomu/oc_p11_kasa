@@ -10,6 +10,8 @@ export function Collapse({title, open, children}) {
     const pRef = useRef(null);
     const contentRef = useRef(null);
 
+    const childrenIsString = typeof(children)==="string";
+
     useEffect(() => {
         if (descriptionVisible){
             const contentHeight = pRef.current.scrollHeight + 24 + 16;
@@ -35,7 +37,10 @@ export function Collapse({title, open, children}) {
             </div>
             <div className="content" ref={contentRef}>
                 <div className={"wrapper"}>
-                    <p ref={pRef}>{children}</p>
+                    <div ref={pRef}>
+                        {childrenIsString ? <p>{children}</p> : <ul>{children.map(child =>
+                          <li key={child}>{child}</li>)}</ul>}
+                    </div>
                 </div>
             </div>
         </article>
