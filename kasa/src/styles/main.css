@@ -116,16 +116,41 @@ footer {
         width: 122px;
         text-align: center; } }
 
+@keyframes slide-from-right {
+  from {
+    transform: translateX(100%); }
+  to {
+    transform: translateX(0%); } }
+@keyframes slide-to-left {
+  from {
+    transform: translateX(0%); }
+  to {
+    transform: translateX(-100%); } }
 .carrousel {
   height: 416px;
   position: relative;
   border-radius: 24px;
   overflow: hidden; }
-  .carrousel > .cover-image {
-    width: 100%;
+  .carrousel > .image-wrapper {
     height: 100%;
-    object-fit: cover;
-    object-position: center; }
+    width: 100%;
+    position: relative; }
+    .carrousel > .image-wrapper > .cover-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center; }
+      .carrousel > .image-wrapper > .cover-image.former-from-right {
+        animation: slide-to-left 1s ease-out; }
+      .carrousel > .image-wrapper > .cover-image.current-from-right {
+        animation: slide-from-right 1s ease-out; }
+      .carrousel > .image-wrapper > .cover-image.former-from-left {
+        animation: slide-from-right 1s ease-out reverse; }
+      .carrousel > .image-wrapper > .cover-image.current-from-left {
+        animation: slide-to-left 1s ease-out reverse; }
   .carrousel > .arrow-hitbox {
     height: 100%;
     width: 96px;
