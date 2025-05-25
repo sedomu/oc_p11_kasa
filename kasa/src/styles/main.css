@@ -369,10 +369,10 @@ footer {
     .details .content .general-information .title li {
       background-color: #FF6060;
       color: #ffffff;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 0.875rem;
       line-height: 150%;
-      width: 112px;
+      width: 120px;
       text-align: center;
       border-radius: 16px;
       height: 24px; }
