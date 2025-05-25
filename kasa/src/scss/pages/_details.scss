@@ -1,0 +1,148 @@
+.details {
+  .content{
+    .general-information{
+      padding: 24px 0 24px 0;
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h1 {
+          color: $orange-400;
+          font-size: 2.25rem;
+          line-height: 150%;
+
+          @media screen and (max-width: $mobile_breakpoint){
+            font-size: 1.125rem;
+          }
+        }
+
+        p {
+          font-size: 1.125rem;
+          line-height: 150%;
+
+          @media screen and (max-width: $mobile_breakpoint){
+            font-size: 0.875rem;
+          }
+        }
+
+        ul {
+          display: flex;
+          justify-content: flex-start;
+          gap: 8px;
+        }
+
+        li {
+          background-color: $orange-400;
+          color: $white-point;
+          font-weight: 600;
+          font-size: 0.875rem;
+          line-height: 150%;
+          width: 120px;
+          text-align: center;
+          border-radius: 8px;
+          height: 24px;
+          
+          @media screen and (max-width: $mobile_breakpoint){
+            font-size: 0.625rem;
+            width: 80px;
+            height: 16px;
+            border-radius: 4px;
+          }
+        }
+
+        @media screen and (max-width: $mobile_breakpoint){
+          gap: 8px;
+        }
+      }
+
+      .host{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+
+        &-profile{
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 8px;
+
+          &-picture {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+
+            @media screen and (max-width: $mobile_breakpoint){
+              width: 32px;
+              height: 32px;
+            }
+          }
+
+          &-name {
+            font-size: 1.125rem;
+            color: $orange-400;
+            white-space: pre;
+            text-align: right;
+
+            @media screen and (max-width: $mobile_breakpoint){
+              font-size: 0.75rem;
+            }
+          }
+        }
+
+        @media screen and (max-width: $mobile_breakpoint){
+          flex-direction: row-reverse;
+        }
+      }
+
+      .rating {
+        display: flex;
+        gap: 16px;
+
+        & > img {
+          width: 24px;
+          height: 24px;
+
+          @media screen and (max-width: $mobile_breakpoint){
+            width: 16px;
+          }
+        }
+
+        @media screen and (max-width: $mobile_breakpoint){
+          gap: 8px;
+        }
+      }
+
+      @media screen and (max-width: $mobile_breakpoint){
+        flex-direction: column;
+        
+      }
+      
+      @media screen and (max-width: $mobile_breakpoint){
+        gap: 16px;
+      }
+    }
+
+    .detailed-information{
+      display: flex;
+      gap: 72px;
+
+      .collapse{
+        flex: 1;
+      }
+
+      @media screen and (max-width: $mobile_breakpoint){
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ export function Card({title, cover, id}) {
   return <>
     <Link to={"/details/" + id}>
       <article className={"card"}>
-        <img src={cover} alt={title}/>
+        <img src={cover} alt={title} loading={"lazy"}/>
         <div className="overlay"/>
         <p>{title}</p>
       </article>

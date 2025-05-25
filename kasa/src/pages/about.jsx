@@ -1,11 +1,10 @@
-import about_hero from "../assets/images/about_hero.png";
 import {Collapse} from "../components/Collapse.jsx";
 
 export function About() {
     return <>
         <main className="about">
             <section className="hero">
-                <img src={about_hero} alt={"landscape"}/>
+                <img src={"./images/about_hero.png"} alt={"landscape"}/>
             </section>
             <section className="content">
                 <Collapse title={"Fiabilité"} open={false}>

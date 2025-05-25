@@ -24,7 +24,7 @@ $mobile_footer-gap_height: 16px;
 $mobile_footer-bottomPadding_height: 64px;
 $mobile_footer-total_height: 200px;
 
-$mobile_main-yMargin_height: 8px;
+$mobile_main-yMargin_height: 24px;
 
 $mobile_header-total_height: calc( #{$mobile_header-yPadding_height} * 2 + #{$mobile_header-content_height} );
 $mobile_footer-content_height: calc( #{$mobile_footer-total_height} - #{$mobile_footer-topPadding_height} - #{$mobile_footer-bottomPadding_height} );

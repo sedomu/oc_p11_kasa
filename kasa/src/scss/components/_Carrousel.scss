@@ -1,0 +1,117 @@
+@keyframes slide-from-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-to-left {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.carrousel {
+  height: 416px;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+
+  & > .image-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    & > .cover-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      &.former-from-right{
+        animation: slide-to-left 1s ease-out;
+      }
+
+      &.current-from-right{
+        animation: slide-from-right 1s ease-out;
+      }
+
+      &.former-from-left{
+        animation: slide-from-right 1s ease-out reverse;
+      }
+
+      &.current-from-left{
+        animation: slide-to-left 1s ease-out reverse;
+      }
+    }
+  }
+
+  & > .arrow-hitbox{
+    height: 100%;
+    width: 96px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+      height: 80px;
+
+      @media screen and (max-width: $mobile_breakpoint) {
+        height: 24px;
+      }
+    }
+
+    &.previous{
+      left: 0;
+    }
+
+    &.next{
+      right: 0;
+      transform: rotate(180deg);
+    }
+
+    @media screen and (max-width: $mobile_breakpoint) {
+      width: 80px;
+    }
+  }
+
+  & > .counter{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 72px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > p {
+      color: $white-point;
+      font-size: 1.125rem;
+    }
+
+    @media screen and (max-width: $mobile_breakpoint) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $mobile_breakpoint) {
+    height: 256px;
+  }
+
+  @media screen and (max-width: $mobile_breakpoint) {
+    border-radius: 16px;
+  }
+}

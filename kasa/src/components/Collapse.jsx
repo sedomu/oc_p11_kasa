@@ -1,4 +1,3 @@
-import accordion_arrow_closed from "../assets/images/accordion-arrow_closed.svg";
 import { useEffect, useRef, useState } from 'react'
 
 export function Collapse({title, open, children}) {
@@ -10,6 +9,8 @@ export function Collapse({title, open, children}) {
 
     const pRef = useRef(null);
     const contentRef = useRef(null);
+
+    const childrenIsString = typeof(children)==="string";
 
     useEffect(() => {
         if (descriptionVisible){
@@ -32,11 +33,14 @@ export function Collapse({title, open, children}) {
         <article className={"collapse " + (descriptionVisible ? "open" : "closed")}>
             <div className="title" onClick={toggleDescription}>
                 <p>{title}</p>
-                <img src={accordion_arrow_closed} alt={"icon"}/>
+                <img src={"/images/arrowCollapse_closed.svg"} alt={"icon"}/>
             </div>
             <div className="content" ref={contentRef}>
                 <div className={"wrapper"}>
-                    <p ref={pRef}>{children}</p>
+                    <div ref={pRef}>
+                        {childrenIsString ? <p>{children}</p> : <ul>{children.map(child =>
+                          <li key={child}>{child}</li>)}</ul>}
+                    </div>
                 </div>
             </div>
         </article>
