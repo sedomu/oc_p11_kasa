@@ -1,4 +1,3 @@
-import accordion_arrow_closed from "../assets/images/accordion-arrow_closed.svg";
 import { useEffect, useRef, useState } from 'react'
 
 export function Collapse({title, open, children}) {
@@ -32,7 +31,7 @@ export function Collapse({title, open, children}) {
         <article className={"collapse " + (descriptionVisible ? "open" : "closed")}>
             <div className="title" onClick={toggleDescription}>
                 <p>{title}</p>
-                <img src={accordion_arrow_closed} alt={"icon"}/>
+                <img src={"/images/arrowCollapse_closed.svg"} alt={"icon"}/>
             </div>
             <div className="content" ref={contentRef}>
                 <div className={"wrapper"}>
