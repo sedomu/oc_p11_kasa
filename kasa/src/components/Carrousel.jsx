@@ -2,18 +2,10 @@ import { useEffect, useState } from 'react'
 
 export function Carrousel({ pictures }) {
 
-  // Just for dev
-  pictures = [
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
-    "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
-  ]
-
   const [currentPicture, setCurrentPicture] = useState(0)
   const [formerPicture, setFormerPicture] = useState(0)
   const [direction, setDirection] = useState(null)
+  const [autoplay, setAutoplay] = useState(true)
 
   // Preload pictures
   useEffect(() => {
@@ -22,6 +14,18 @@ export function Carrousel({ pictures }) {
       img.src = picture;
     })
   }, [])
+
+  // Défilement automatique
+  useEffect(() => {
+    if (autoplay) {
+      const interval = setInterval(() => {
+        handleNextPicture()
+      }, 3000)
+
+      return () => clearInterval(interval);
+    }
+  }, [currentPicture]);
+
 
   const countPictures = pictures.length;
 
@@ -55,11 +59,11 @@ export function Carrousel({ pictures }) {
           <img key={"former" + formerPicture} className={"cover-image former-from-" + direction} src={pictures[formerPicture]} alt={"picture"}/>
           <img key={"current" + currentPicture} className={"cover-image current-from-" + direction} src={pictures[currentPicture]} alt={"picture"}/>
         </div>
-        <div className={"arrow-hitbox previous"} onClick={handlePreviousPicture}>
+        <div className={"arrow-hitbox previous"} onClick={() => {handlePreviousPicture(); setAutoplay(false)}}>
           <img className={"arrow-previous"} src={"/images/arrowCarrousel_left.svg"} alt={"previous"}/>
         </div>
-        <div className={"arrow-hitbox next"} onClick={handleNextPicture}>
-          <img className={"arrow-next"} onClick={handleNextPicture} src={"/images/arrowCarrousel_left.svg"} alt={"next"}/>
+        <div className={"arrow-hitbox next"} onClick={() => {handleNextPicture(); setAutoplay(false)}}>
+          <img className={"arrow-next"} src={"/images/arrowCarrousel_left.svg"} alt={"next"}/>
         </div>
         <div className={"counter"}>
           <p>{currentPicture + 1}/{countPictures}</p>
