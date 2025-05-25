@@ -81,6 +81,11 @@ header{
     height: $mobile_header-content_height;
     padding: $mobile_header-yPadding_height 20px;
   }
+
+  @media screen and (min-width: $max-desktop_breakpoint){
+    padding-left: calc( (50vw - 864px));
+    padding-right: calc( (50vw - 864px));
+  }
 }
 
 main{
@@ -90,6 +95,11 @@ main{
   @media screen and (max-width: $mobile_breakpoint){
     margin: $mobile_main-yMargin_height 16px;
     min-height: $mobile_main-total_available-height;
+  }
+
+  @media screen and (min-width: $max-desktop_breakpoint){
+    padding-left: calc( (50vw - 960px));
+    padding-right: calc( (50vw - 960px));
   }
 }
 
@@ -116,5 +126,10 @@ footer {
       width: 122px;
       text-align: center;
     }
+  }
+
+  @media screen and (min-width: $max-desktop_breakpoint){
+    padding-left: calc( (50vw - 960px));
+    padding-right: calc( (50vw - 960px));
   }
 }
