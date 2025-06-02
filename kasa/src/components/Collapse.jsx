@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
-export function Collapse({title, open, children}) {
-    const [descriptionVisible, setDescriptionVisible] = useState(open)
+export function Collapse({title, isOpen, children}) {
+    const [descriptionVisible, setDescriptionVisible] = useState(isOpen)
 
     const toggleDescription = () => {
         setDescriptionVisible(!descriptionVisible);
@@ -28,6 +28,11 @@ export function Collapse({title, open, children}) {
             pRef.current.style.transition = "opacity 350ms 0ms ease-out, transform 300ms 150ms ease-out"
         }
     }, [descriptionVisible])
+
+    useEffect(() => {
+        contentRef.current.style.transition = "none"
+        pRef.current.style.transition = "none"
+    }, [])
 
     return <>
         <article className={"collapse " + (descriptionVisible ? "open" : "closed")}>
