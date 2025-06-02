@@ -58,10 +58,10 @@ header {
   padding: 48px 96px;
   display: flex;
   justify-content: space-between; }
-  header > .logo {
+  header > a > .logo {
     height: 64px; }
     @media screen and (max-width: 768px) {
-      header > .logo {
+      header > a > .logo {
         height: 48px; } }
   header > nav {
     display: flex;

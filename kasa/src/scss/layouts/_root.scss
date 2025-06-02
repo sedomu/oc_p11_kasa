@@ -43,7 +43,7 @@ header{
   display: flex;
   justify-content: space-between;
 
-  & > .logo{
+  & > a > .logo{
     height: $header-content_height;
 
     @media screen and (max-width: $mobile_breakpoint){
